@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+{{ super() }}
+
+
+<div class="center">
+    <h1>Login</h1>
+    <form method="post">
+        <div class="txt_field">
+            <input type="text" required name="username">
+            <span></span>
+            <label>Username</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" required name="password">
+            <span></span>
+            <label>Password</label>
+        </div>
+        <div class="txt_field">
+            <input type="number" name="year" placeholder="year(from 2014)">
+            <label>Year</label>
+        </div>
+        <input type="submit" value="Login">
+        <div class="signup_link">
+            Not a member?<a href="{{url_for('signup')}}">Click here</a>
+        </div>
+    </form>
+</div>
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+{% for message in messages %}
+<hr>
+<h4>{{ message }}</h4>
+{% endfor %}
+
+{% endif %}
+{% endwith %}
+
+{% endblock %}
+
+
+

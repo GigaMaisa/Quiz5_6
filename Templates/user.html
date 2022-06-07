@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+User
+{% endblock %}
+
+{% block content %}
+<h2> Hello {{ session['username'] }} <br>
+    You chose {{ session['year'] }} year</h2>
+
+
+<section class="more-info">
+    <div class="feature">
+        <div class="content">
+            <table>
+
+                <tr>
+                    <th>driverID</th>
+                    <th>Number</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>Date of Birth</th>
+                    <th>Nationality</th>
+                </tr>
+                {% for each in drivers_list %}
+                <tr>
+                    <td>{{each[0]}}</td>
+                    <td>{{each[1]}}</td>
+                    <td>{{each[2]}}</td>
+                    <td>{{each[4]}}</td>
+                    <td>{{each[5]}}</td>
+                    <td>{{each[6]}}</td>
+                    <td>{{each[7]}}</td>
+                </tr>
+                    {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+    {% endblock %}
+

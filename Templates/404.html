@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    404 Error
+{% endblock %}
+
+
+{% block content %}
+    {{ super() }}
+    <p style="color: red" ><b><i>Ooops... Looks like error 404... it's okay. Even Lewis Hamilton's Mercedes has errors and issues. Wanna Pit Stop to <a href="{{url_for('home')}}">Home Page?</a>
+    </b>
+    </i>
+    </p>
+{% endblock %}
